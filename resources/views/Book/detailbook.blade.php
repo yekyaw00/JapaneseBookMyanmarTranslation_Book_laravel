@@ -3,7 +3,7 @@
 <div class="flex flex-col">
     <div class="w-2/3 block">
         <div class="flex font-bold text-xl justify-content-center">
-            {{$book->book_name}}
+            {{$book->book_name}} / {{$book->level}}
         </div>
         <div class="p-2 bg-white rounded-xl">
             <div class="w-80 h-96" style="background-image:url('{{url($book->book_photo)}}'); background-position: center; height: 500; width: 300;"></div>

@@ -16,6 +16,16 @@
                     <input id="name" autocomplete="false" tabindex="0" name="book_name" type="text" value="{{$book->book_name}}" class="py-1 px-1 text-gray-900 outline-none block h-full w-full">
                 </p>
             </div>
+            <div class="border focus-within:border-blue-500 focus-within:text-blue-500 transition-all duration-500 relative rounded p-1">
+                <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
+                    <p>
+                        <label for="level" class="bg-white text-gray-600 px-1">Level</label>
+                    </p>
+                </div>
+                <p>
+                    <input id="level" autocomplete="false" tabindex="0" name="level" type="text" value="{{$book->level}}" class="py-1 px-1 text-gray-900 outline-none block h-full w-full">
+                </p>
+            </div>
             <div class="border focus-within:border-blue-500 focus-within:text-blue-500 transition-all duration-500 relative rounded p-1 px-3">
                 <div class="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
                     <p>
@@ -44,7 +54,6 @@
 
 @section('script')
 <script>
-
     var loadFile = function(event) {
         $('#oldphoto').hide();
         var output = document.getElementById('blah');

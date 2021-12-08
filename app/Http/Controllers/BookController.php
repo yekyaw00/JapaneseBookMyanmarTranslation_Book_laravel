@@ -51,7 +51,7 @@ class BookController extends Controller
 
         $filepath = '/storage/image/'.$filename;
 
-        $book = Book::create(['book_name'=>$request->book_name,'book_photo'=>$filepath]);
+        $book = Book::create(['book_name'=>$request->book_name,'book_photo'=>$filepath, 'level'=>$request->level]);
     
         return redirect()->route('book.index');
     }
@@ -93,7 +93,8 @@ class BookController extends Controller
         if (!$request->hasFile('book_photo')) {
             $book->update([
                 "book_name" => $request->book_name,
-                "book_photo" => $request->oldphoto
+                "book_photo" => $request->oldphoto,
+                "level" => $request->level
             ]);
         } else {
             $extension = $request->file('book_photo')->getClientOriginalExtension();
@@ -106,7 +107,7 @@ class BookController extends Controller
 
             $filepath = '/storage/image/' . $filename;
 
-            $book = $book->update(['book_name' => $request->book_name, 'book_photo' => $filepath]);
+            $book = $book->update(['book_name' => $request->book_name, 'book_photo' => $filepath, 'level' => $request->level]);
 
            
         } return redirect()->route('book.index');

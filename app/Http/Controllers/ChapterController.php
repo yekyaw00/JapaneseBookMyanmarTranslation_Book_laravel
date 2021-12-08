@@ -53,7 +53,7 @@ class ChapterController extends Controller
      */
     public function show(Chapter $chapter)
     {
-        $vocabularies = Vocabulary::all();
+        $vocabularies = $chapter->vocabularies;
         return view('Chapter.chapterdetail',compact('chapter','vocabularies'));
         
     }

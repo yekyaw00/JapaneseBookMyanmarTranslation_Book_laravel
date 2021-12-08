@@ -17,7 +17,7 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('book_name');
             $table->string('book_photo');
-            
+            $table->string('level');
             $table->timestamps();
         });
     }

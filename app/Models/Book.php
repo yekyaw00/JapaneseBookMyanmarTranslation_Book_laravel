@@ -9,7 +9,7 @@ class Book extends Model
 {
     use HasFactory;
     
-    protected $fillable=['book_name', 'book_photo'];
+    protected $fillable=['book_name', 'book_photo', 'level'];
 
     public function chapters(){
         return $this->hasMany(Chapter::class);

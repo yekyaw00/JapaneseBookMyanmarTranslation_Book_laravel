@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\UserBookController;
 use App\Http\Controllers\VocabularyController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('userlayout');
 });
 
 Route::resource('/book', BookController::class);
 Route::resource('/chapter', ChapterController::class);
 Route::resource('/vocabulary',VocabularyController::class);
+Route::get('/user/book',[ UserBookController::class, 'index'])->name('user.book');
+Route::get('/user/book/{book}',[ UserBookController::class, 'userBookDetail' ])->name('user.book.detail');
+Route::post('/user/book/search/',[UserBookController::class, 'searchBook'])->name('user.book.search');
